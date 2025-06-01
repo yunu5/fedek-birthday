@@ -55,3 +55,11 @@ body::before {
   background: rgba(0, 0, 0, 0.6); /* dark overlay */
   z-index: 1;
 }
+
+#countdown {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #ffccff;
+  font-weight: bold;
+  text-shadow: 0 0 8px #ff99ff;
+}
