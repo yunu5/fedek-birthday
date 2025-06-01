@@ -1,0 +1,47 @@
+/* Base styling */
+body {
+  margin: 0;
+  padding: 0;
+  background: #0d0d0d;
+  color: #fff;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  text-align: center;
+  overflow: hidden;
+}
+
+main {
+  position: relative;
+  z-index: 2;
+  padding: 100px 20px;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  color: #ff99ff;
+}
+
+#countdown {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #ffccff;
+}
+
+.message {
+  font-size: 1.2em;
+  max-width: 500px;
+  margin: 0 auto;
+  color: #ccccff;
+}
+
+/* Sparkle background */
+.stars {
+  background: transparent url('https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif') repeat;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.2;
+  z-index: 1;
+}
