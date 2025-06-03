@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Great Vibes', cursive;
+  background: #0d0d0d;
+  color: #e3b6ff;
+  height: 100%;
+}
+
+.background {
+  background: radial-gradient(ellipse at center, #1e002a 0%, #0d0d0d 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.container {
+  border: 2px solid #e3b6ff;
+  border-radius: 20px;
+  padding: 40px 30px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 0 15px #c871ff;
+  width: 85%;
+  max-width: 400px;
+}
+
+.message {
+  font-size: 1.4em;
+  margin-bottom: 30px;
+  line-height: 1.4;
+}
+
+.countdown {
+  font-size: 2em;
+  font-weight: bold;
+}
