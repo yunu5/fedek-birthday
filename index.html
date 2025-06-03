@@ -3,19 +3,125 @@
 <head>
   <meta charset="UTF-8">
   <title>Fedek's Birthday Countdown</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@400;700&display=swap');
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Quicksand', sans-serif;
+      background: radial-gradient(ellipse at center, #2b0b3f 0%, #0d0d0d 100%);
+      overflow: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+      opacity: 0.2;
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      padding: 20px;
+    }
+
+    .card {
+      background-color: rgba(0, 0, 0, 0.6);
+      border: 2px solid #e3b6ff;
+      border-radius: 25px;
+      padding: 40px 30px;
+      text-align: center;
+      max-width: 380px;
+      width: 90%;
+      box-shadow: 0 0 20px #c871ff;
+      backdrop-filter: blur(10px);
+    }
+
+    .message {
+      font-family: 'Great Vibes', cursive;
+      font-size: 1.8em;
+      color: #f7d6ff;
+      margin-bottom: 30px;
+      text-shadow: 0 0 8px #a84bd8;
+    }
+
+    .countdown {
+      font-size: 2.2em;
+      font-weight: bold;
+      color: #e0b3ff;
+      text-shadow: 0 0 6px #bf6dfb;
+      border: 2px dashed #e3b6ff;
+      padding: 15px;
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .sparkles {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: url('https://cdn.pixabay.com/photo/2016/03/31/20/11/stars-1294035_1280.png');
+      background-size: cover;
+      opacity: 0.05;
+      animation: float 60s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes float {
+      from {background-position: 0 0;}
+      to {background-position: 1000px 1000px;}
+    }
+  </style>
 </head>
 <body>
-  <div class="background">
-    <div class="container">
+  <div class="sparkles"></div>
+  <div class="container">
+    <div class="card">
       <div class="message">
-        <p>Every second brings us closer to cake, hugs, and possibly bad singing. 💜<br>— Fedek</p>
+        Every second brings us closer to cake, hugs,<br>
+        and possibly bad singing. 💜<br><br>
+        — Fedek
       </div>
       <div class="countdown" id="countdown">
         Loading countdown...
       </div>
     </div>
   </div>
-  <script src="script.js"></script>
+
+  <script>
+    function updateCountdown() {
+      const targetDate = new Date("August 17, 2025 00:00:00").getTime();
+      const now = new Date().getTime();
+      const gap = targetDate - now;
+
+      const countdown = document.getElementById("countdown");
+
+      if (gap <= 0) {
+        countdown.innerText = "🎉 It's Fedek's Birthday! 🎉";
+        return;
+      }
+
+      const days = Math.floor(gap / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((gap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((gap % (1000 * 60)) / 1000);
+
+      countdown.innerText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
 </body>
 </html>
